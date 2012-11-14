@@ -7,14 +7,15 @@
 */
 
 body{
-    background-image:url('../img/light_noise_diagonal.png');
+
 }
 
 .container{
-    -webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.75);
-    background-color: #FAFAFA;
+
+}
+
+.container-wrapper{
+    
 }
 
 .imac{
@@ -48,3 +49,5 @@ body{
 .gray{
     color: gray;
 }
+
+
