@@ -9,7 +9,6 @@
         <div class="row-fluid">
             <img src="./img/home_banner_full.jpg"/>
         </div>
-        
         <div class="container">
             <div class="row-fluid" style="margin-top: 40px;">
                 <div class="span6 clearfix">
