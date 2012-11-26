@@ -1,75 +1,52 @@
 <!DOCTYPE html>
+<?php $page = "blog"; ?>
 <html lang="en">
-  <head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php include_once './includes/header.php';?>
-           <style>
-      html, body {
-       height:100%;
-      }
-    </style>
     </head>
-    
-</html>
-<body>
-    <?php include_once './includes/navbar.php' ;?>
-  <!-- BEGIN Timeline Embed -->
-  <div id="timeline-embed"></div>
-  <script type="text/javascript">
-    var timeline_config = {
-        width: "100%",
-        height: "100%",
-        source: {
-	"timeline":
-	{
-		"headline":"The Main Timeline Headline Goes here",
-		"type":"default",
-		"text":"<p>Intro body text goes here, some HTML is ok</p>",
-		"asset": {
-			"media":"http://yourdomain_or_socialmedialink_goes_here.jpg",
-			"credit":"Credit Name Goes Here",
-			"caption":"Caption text goes here"
-		},
-		"date": [
-			{
-				"startDate":"2011,12,10",
-				"endDate":"2011,12,11",
-				"headline":"Headline Goes Here",
-				"text":"<p>Body text goes here, some HTML is OK</p>",
-				"tag":"This is Optional",
-				"asset": {
-					"media":"http://twitter.com/ArjunaSoriano/status/164181156147900416",
-					"thumbnail":"optional-32x32px.jpg",
-					"credit":"Credit Name Goes Here",
-					"caption":"Caption text goes here"
-				}
-			}
-		],
-		"era": [
-			{
-				"startDate":"2011,12,10",
-				"endDate":"2011,12,11",
-				"headline":"Headline Goes Here",
-				"tag":"This is Optional"
-			}
-			
-		],
-		"chart": [
-			{
-				"startDate":"2011,12,10",
-				"endDate":"2011,12,11",
-				"headline":"Headline Goes Here",
-				"value":"28"
-			}
-			
-		]
-		
-	}
-}
-    }
-  </script>
-  <?php include_once './includes/js.php'?>
-  <script type="text/javascript" src="./javascript/timeline/js/storyjs-embed.js"></script>
-  <!-- END Timeline Embed-->
-</body>
+    <body>
+        <?php 
+            include_once './includes/navbar.php' ;
+            include_once './manager/TumblrManager.php';
+            $tumblrManager = new TumblrManager();
+            $posts = $tumblrManager->getPosts(0, 10);
+        ?>
+        <div class="container">  
+            <div id="posts" class="row">
+                <?php foreach($posts as $post): ?>
+                <?php echo $post; ?>
+                <?php endforeach; ?>
+            </div>
+        <?php include_once './includes/js.php'?>
+        <script src="http://masonry.desandro.com/jquery.masonry.min.js"></script>
+        <script>
+        $(document).ready(function () {
+   
+            $("#posts").masonry({
+                itemSelector: '.tumblr-post',
+                isAnimated: true,
+                columnWidth: 
+                    function( containerWidth ) {
+                    console.log("containerWidth: "+containerWidth);
+                    var width = containerWidth;
+                    var col = 200;
+                    console.log("width: "+width);
+
+                    if(width < 1200 && width >= 980) {
+                        col = 160;
+                    }
+                    else if(width < 980 && width >= 768) {
+                        col = 20;
+                    }
+                    else if(width < 768 ){
+                        col = 19;
+                    }
+                    console.log("column: "+col);
+                    return col;
+                  }
+            });
+        });
+        </script>
+    </body>
 </html>

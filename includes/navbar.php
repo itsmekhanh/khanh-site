@@ -6,13 +6,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand">Khanh Luc</a>
+                <a href="./index.php" class="brand <?php if($page == "portfolio") echo "class='active'" ?>">Khanh Luc</a>
                 <div class="nav-collapse collapse">
-                   <ul class="nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                </ul>
+                    <ul class="nav">
+                        <li <?php if($page == "portfolio") echo "class='active'" ?>><a href="#">Portfolio</a></li>
+                        <li <?php if($page == "blog") echo "class='active'" ?>><a href="./blog.php">Blog</a></li>
+                        <li <?php if($page == "contact") echo "class='active'" ?>><a href="#contact">Contact</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
