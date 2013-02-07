@@ -50,5 +50,6 @@
     <?php include_once './includes/js.php'?>
     <script>
     $('.carousel').carousel();
+    $('.dropdown-toggle').dropdown();
     </script>
 </html>

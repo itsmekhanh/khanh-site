@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<?php $page = "blog"; ?>
+<?php 
+$page = "blog"; 
+if(empty($_GET['o'])){
+    $_GET['o']=1;
+}
+?>
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,59 +15,47 @@
             include_once './includes/navbar.php' ;
             include_once './manager/TumblrManager.php';
             $tumblrManager = new TumblrManager();
-            //$posts = $tumblrManager->getPosts(10, 20);
+            $posts = $tumblrManager->getPosts(0, 10);
         ?>
-        <div class="container">
-            <div id="posts" class="row" style="margin-top: 10px">
-                <?php foreach($posts as $post): ?>
-                <?php echo $post; ?>
-                <?php endforeach; ?>
-            </div>
-            <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
-            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h3 id="myModalLabel">Modal header</h3>
+        <div class="container" style="margin-top:10px">
+            <div class="row">
+                <div class="span3">
+                     <div class="well">
+                        <img src="./img/blog_profile.jpg" alt="" /><center><p style="margin-top: 10px">Going places, meeting faces, and setting paces. Enjoying life one moment at a time.</p></center>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <p>One fine body…</p>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                    <button class="btn btn-primary">Save changes</button>
+                <div class="span9" id="blog">
+                    <?php if(!empty($posts)): ?>
+                        <?php foreach($posts as $post): ?>
+                        <div class="row"><div class='tumblr-post shadow1 span6'><?php echo $post['formatted']; ?></div>
+                            <div class="span3">
+                                <div class="tumblr-type-icon pull-left" style="padding-right: 10px; padding-top:4px">
+                                    <img src="<?php echo "./img/{$post['post']['type']}.png"?>"/>
+                                </div>
+                                <div class="tumblr-date"><?php echo date('j F, Y',$post['post']['timestamp']);?></div>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                    <a class="loadmore" href="./more.php">next</a>
+                    <?php endif;?>
                 </div>
             </div>
         </div>
-       
+    
         <?php include_once './includes/js.php'?>
-        <script src="http://masonry.desandro.com/jquery.masonry.min.js"></script>
+        <script src="./javascript/jquery.infinitescroll.min.js"></script>
         <script>
-        $(document).ready(function () {
-   
-            $("#posts").masonry({
-                itemSelector: '.tumblr-post',
-                isAnimated: true,
-                columnWidth: 
-                    function( containerWidth ) {
-             
-                    var width = containerWidth;
-                    var col = 200;
-
-                    if(width < 1200 && width >= 980) {
-                        col = 160;
-                    }
-                    else if(width < 980 && width >= 768) {
-                        col = 20;
-                    }
-                    else if(width < 768 ){
-                        col = 19;
-                    }
-                    return col;
-                  }
+            $("#blog").infinitescroll({
+                navSelector: 'a.loadmore',
+                nextSelector: 'a.loadmore:last',
+                itemSelector: '.row',
+                loading:{
+                    finishedMsg: "<em>All posts are loaded.</em>",
+                    img: "./img/loading.gif",
+                    msgText: "",
+                    speed: 'fast'
+                }
             });
-            
-            $('#postModal').modal();
-        });
         </script>
     </body>
 </html>

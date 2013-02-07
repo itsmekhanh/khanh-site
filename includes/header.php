@@ -9,7 +9,9 @@
         padding: 9px 0;
       }
 </style>
-<link href='http://fonts.googleapis.com/css?family=Delius' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Homemade+Apple' rel='stylesheet' type='text/css'>
+<script src="http://use.edgefonts.net/la-belle-aurore.js"></script>
 <link href="./css/bootstrap-responsive.css" rel="stylesheet">
 <link href="./css/style.css" rel="stylesheet">
