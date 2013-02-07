@@ -9,9 +9,8 @@
                 <a href="./index.php" class="brand <?php if($page == "portfolio") echo "class='active'" ?>">Khanh Luc</a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li <?php if($page == "portfolio") echo "class='active'" ?>><a href="#">Portfolio</a></li>
+                        <li class="dropdown">Photography<b class="caret"></b></li>
                         <li <?php if($page == "blog") echo "class='active'" ?>><a href="./blog.php">Blog</a></li>
-                        <li <?php if($page == "contact") echo "class='active'" ?>><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>

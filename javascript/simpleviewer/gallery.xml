@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<simpleviewergallery 
+
+	useFlickr="true"
+        flickrUserId="49585808@N08"
+	flickrImageCount="500"
+        buttonBarPosition="OVERLAY"
+	backgroundTransparent="false"
+	frameWidth="10"
+	thumbColumns="2"
+	thumbRows="8"
+	thumbPosition="LEFT"
+	imageFrameStyle="SQUARE"
+	imageScaleMode="SCALE_UP"
+	flashBrightness="2"
+	imageSmoothing="true"
+	imageNavStyle="CIRCLE"
+	titleDropShadow="false"
+        flickrShowTitle="false"
+	flickrSort="DATE-TAKEN-DESC"/>

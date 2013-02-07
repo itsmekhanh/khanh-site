@@ -50,26 +50,131 @@ body{
     box-shadow:         0px 1px 1px rgba(50, 50, 50, 0.75);
 }
 
+.footer{
+    margin-top: 40px;
+    background-color: #666666;
+    border-top: 1px solid #E5E5E5;
+    padding: 40px 0;
+    color: white;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer p{
+    margin: 0px;
+    font-size: 12px;
+}
+
+.footer .contact p{
+    text-align: right;
+}
+
 /* tumblr classes go here. */
 
 .hero img{
     max-height: 480px;
 }
 
+
+/* tumblr blog */
 .tumblr-post{
     background-color: white;
     margin-bottom: 20px;
 }
 
+.image-max{
+    width: 100%;
+}
 .tumblr-post p{
-    padding:10px;
+    padding:20px;
 }
 
+.tumblr-title{
+    padding: 10px;
+}
+
+.tumblr-date{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Homemade Apple', cursive;
+    font-size: 20px;
+    line-height: 20px;
+    color: gray;
+}
+
+.tumblr-stats{
+    color: black;
+}
+
+.tumblr-type-icon{
+    max-width: 28px;
+}
+
+.tumblr-quote{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-align:left;
+    text-justify:inter-word;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.tumblr-video iframe,
+.tumblr-video object,
+.tumblr-video embed {
+    width: 100%;
+}
+
+.tumblr-link p{
+    padding-top: 20px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 22px;
+    line-height: 24px;
+    color: gray;
+}
+
+
+/* photography events*/
+.event-thumbnail{
+    width: 100%;
+    border-color: white;
+    border-style: solid;
+    border-width: 6px;
+}
+
+/* photography galleries */
+.main-gallery{
+    background-color: white;
+    width: 96%;
+    border-color: white;
+    border-style: solid;
+    border-width: 10px;
+}
+
+.main-gallery h2{
+    margin-top:20px;
+    font-family: la-belle-aurore, serif;
+    color: #404040;
+}
+
+.featured-gallery{
+    width: 100%;
+    border-color: white;
+    border-style: solid;
+    border-width: 6px;
+    background-color: white;
+}
+
+/* shadows and borders */
 .shadow1{
     -webkit-box-shadow: 0px 1px 2px rgba(50, 50, 50, 0.25);
     -moz-box-shadow:    0px 1px 2px rgba(50, 50, 50, 0.25);
     box-shadow:         0px 1px 2px rgba(50, 50, 50, 0.25);
 }
+
 
 .border1{
     -webkit-border-bottom-right-radius: 5px;
@@ -79,3 +184,15 @@ body{
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
+.well img{
+    width: 100%;
+}
+
+/* Content Hover */
+.contenthover { padding:20px 20px 10px 20px; }
+.contenthover, .contenthover h3, contenthover a { color:#fff; }
+.contenthover h3, .contenthover p { margin:0 0 10px 0; line-height:1.4em; padding:0; }
+.contenthover a.mybutton { display:block; float:left; padding:5px 10px; background:#3c9632; color:#fff; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+.contenthover a.mybutton:hover { background:#34742d }
+/* FONTS */
