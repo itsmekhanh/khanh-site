@@ -44,11 +44,13 @@ class TumblrManager{
         $html = "";
         switch($post['type']){
             case 'photo':
-                if(!empty($post['photos'][0]['alt_sizes'])){
-                    if($post['photos'][0]['alt_sizes'][0]['width'] > 400){
-                        $html .= "<center><img class='image-max' src='{$post['photos'][0]['alt_sizes'][0]['url']}'/></center>";
-                    }else
-                        $html .= "<center><img style='margin-top: 20px' src='{$post['photos'][0]['alt_sizes'][0]['url']}'/></center>";
+                if(!empty($post['photos'])){
+                    foreach($post['photos'] as $photo){
+                        if($photo['alt_sizes'][0]['width'] > 400){
+                            $html .= "<center><img class='image-max' src='{$photo['alt_sizes'][0]['url']}'/></center>";
+                        }else
+                            $html .= "<center><img style='margin-top: 20px' src='{$photo['alt_sizes'][0]['url']}'/></center>";
+                    }
                 }
                 if(!empty($post['caption'])){
                     $html .= "<center>".$post['caption']."</center>";

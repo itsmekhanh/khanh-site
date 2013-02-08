@@ -25,7 +25,7 @@ $count = 0;
                             <a href="./gallery?set=<?php echo $sets[$i]['id']?>" target="_blank">
                                 <img class="event-thumbnail border1 shadow1" src="<?php echo "http://farm{$sets[$i]['farm']}.static.flickr.com/{$sets[$i]['server']}/{$sets[$i]['primary']}_{$sets[$i]['secret']}_q.jpg"; ?>"/>
                             </a>
-                            <p><center><?php echo $sets[$i]['title']; $count++; ?></center></p>
+                            <center><p style="padding-top:5px"><?php echo $sets[$i]['title']; $count++; ?></p></center>
                             </div>
                         <?php if($count== 6): ?>
                         </div>

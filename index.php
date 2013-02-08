@@ -60,18 +60,19 @@ $post = $tumblrManager->getPosts(0, 1);
                     <h4>Featured Gallery</h4>
                     <div class="main-gallery shadow1 border1">
                         <a href="./gallery?set=<?php echo $gallery['id'];?>" target="_blank">
-                        <img src="<?php echo "http://farm{$gallery['farm']}.static.flickr.com/{$gallery['server']}/{$gallery['primary']}_{$gallery['secret']}_z.jpg"; ?>"
+                        <img src="<?php echo "http://farm{$gallery['farm']}.static.flickr.com/{$gallery['server']}/{$gallery['primary']}_{$gallery['secret']}_z.jpg"; ?>"/>
                         </a>
-                        <h2><center><?php echo $gallery['title'];?></center></div>
+                        <h2><center><?php echo $gallery['title'];?></center></h2>
                     </div>
                 </div>
             </div>
         </div>
-        <?php include_once './includes/footer.php';?>
+        <?php include_once './includes/footer.php'; ?>
+        <?php include_once './includes/js.php'?>
+        <script>
+        $('.carousel').carousel();
+        $('.dropdown-toggle').dropdown();
+        </script>
     </body>
-    <?php include_once './includes/js.php'?>
-    <script>
-    $('.carousel').carousel();
-    $('.dropdown-toggle').dropdown();
-    </script>
+
 </html>
