@@ -1,5 +1,18 @@
 <!DOCTYPE html>
-<?php $page = "home"; ?>
+<?php $page = "home"; 
+include_once './manager/TumblrManager.php';
+$tumblrManager = new TumblrManager();
+
+require_once './manager/phpFlickr.php';
+$flickr = new phpFlickr("63cee3b6bc72105b32cbed186ee52655");
+$photoset = $flickr->photosets_getList("49585808@N08");
+$sets=$photoset['photoset'];
+$max = count($sets);
+$random = rand(0,$max-1);
+
+$gallery = $sets[$random];
+$post = $tumblrManager->getPosts(0, 1);
+?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -38,14 +51,23 @@
             <hr/>
             <div class="row-fluid">
                 <div class="span6">
-                    <h4>Latest Update</h4>
-                    
+                    <h4>Latest Blog Post</h4>
+                    <div class="tumblr-post border1 shadow1">
+                    <?php echo $post[0]['formatted']; ?>
+                    </div>
                 </div>
                 <div class="span6">
                     <h4>Featured Gallery</h4>
+                    <div class="main-gallery shadow1 border1">
+                        <a href="./gallery?set=<?php echo $gallery['id'];?>" target="_blank">
+                        <img src="<?php echo "http://farm{$gallery['farm']}.static.flickr.com/{$gallery['server']}/{$gallery['primary']}_{$gallery['secret']}_z.jpg"; ?>"
+                        </a>
+                        <h2><center><?php echo $gallery['title'];?></center></div>
+                    </div>
                 </div>
             </div>
         </div>
+        <?php include_once './includes/footer.php';?>
     </body>
     <?php include_once './includes/js.php'?>
     <script>

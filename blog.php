@@ -54,5 +54,6 @@ $page = "blog";
                 }
             });
         </script>
+                <?php include_once './includes/footer.php';?>
     </body>
 </html>

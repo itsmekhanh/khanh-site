@@ -15,7 +15,7 @@ $count = 0;
     </head>
     <body>
         <?php include_once './includes/navbar.php' ;?>
-        <div class="container" style="margin-top: 20px">
+        <div class="container" style="margin-top: 20px; padding-bottom:220px">
             <?php if(isset($sets)): ?>
                 <?php for($i=count($sets)-1; $i>=0; $i--): ?>
                     <?php if($count == 0): ?>
@@ -34,6 +34,7 @@ $count = 0;
                 <?php endfor; ?>
             <?php endif; ?>
         </div>
+                <?php include_once './includes/footer.php';?>
     </body>
 
 </html>
