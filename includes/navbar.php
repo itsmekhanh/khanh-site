@@ -12,8 +12,8 @@
                     <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Photography <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Galleries</a></li>
-                        <li><a href="#">Events</a></li>
+                        <li><a href="./galleries">Galleries</a></li>
+                        <li><a href="./events">Events</a></li>
                     </ul>
               </li>
                     <li <?php if($page == "blog") echo "class='active'" ?>><a href="./blog">Blog</a></li>
