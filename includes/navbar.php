@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a href="./index.php" class="brand <?php if($page == "portfolio") echo "class='active'" ?>">Khanh Luc</a>
+            <a href="./" class="brand <?php if($page == "portfolio") echo "class='active'" ?>">Khanh Luc</a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     <li class="dropdown">

@@ -1,7 +1,7 @@
 <?php
 include_once './manager/TumblrManager.php';
 $tumblrManager = new TumblrManager();
-$posts = $tumblrManager->getPosts($_GET['o']*10, 10);
+$posts = $tumblrManager->getPosts(($_GET['o']-1)*10, 10);
 ?>
  <?php if(!empty($posts)): ?>
     <?php foreach($posts as $post): ?>
@@ -14,5 +14,6 @@ $posts = $tumblrManager->getPosts($_GET['o']*10, 10);
         </div>
     </div>
     <?php endforeach; ?>
-<a class="loadmore" href="./more?o="<?php echo $_GET['o']+1; ?>>next</a>
+<a class="loadmore" href="./more?o=<?php echo $_GET['o']+1; ?>">next</a>
 <?php endif;?>
+
