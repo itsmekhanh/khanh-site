@@ -15,7 +15,7 @@ $count = 0;
     </head>
     <body>
         <?php include_once './includes/navbar.php' ;?>
-        <div class="container" style="margin-top: 20px; padding-bottom:220px">
+        <div class="container" style="margin-top: 20px; padding-bottom:400px">
             <?php if(isset($sets)): ?>
                 <?php for($i=count($sets)-1; $i>=0; $i--): ?>
                     <?php if($count == 0): ?>
