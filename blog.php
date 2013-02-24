@@ -20,7 +20,8 @@ $page = "blog";
                 <div class="span3">
                      <div class="well">
                         <img src="./img/blog_profile.jpg" alt="" /><center><p style="margin-top: 10px">Going places, meeting faces, and setting paces. Enjoying life one moment at a time.</p></center>
-                    </div>
+                        <center><iframe border="0" allowtransparency="true" src="http://platform.tumblr.com/v1/follow_button.html?button_type=2&tumblelog=khanhluc&color_scheme=dark" frameborder="0" height="25" scrolling="no" width="114"></iframe></center>
+                     </div>
                 </div>
                 <div id="blog" class="span9">
                     <?php if(!empty($posts)): ?>
